@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+a{
+    color: #333333;
+    font-size: 15px;
+}
+
+.purpule{
+    color: #7B1FA2;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(231,231,231,0.31);
+
+}
+
+.page-container{
+    height: 520px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    overflow: hidden;
+    border-top: 7px solid #7B1FA2;
+    border-radius: 2px;
+    box-shadow: 0 17px 41px -21px rgb(0, 0, 0);
+    background: white;
+}
+
+header p{
+    font-size: 14px;
+    color: #837E7E;
+}
+
+header, footer{
+    text-align: center;
+    padding: 25px;
+}
+
+main{
+    width: 90%;
+    margin: 0 auto;
+    color: #333333;
+    font-size: 15px;
+}
+
+main input[type="text"], input[type="number"], input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+}
+
+/*=======chi stacvum=========*/
+/*input:focus{*/
+/*border-color: #7B1FA2;*/
+/*}*/
+
+main>*{
+    margin: 30px;
+}
+
+footer{
+    background: rgba(242,242,242,0.31);
+}
+
+.btn{
+    position: relative;
+}
+
+button{
+    background: #7B1FA2;
+    color: #d9d9d9;
+    border: none;
+    padding: 10px 30px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+
+
+/*================================steps======================*/
+.reg-steps {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    top: 75px;
+}
+
+.reg-steps>*{
+    width: 25%;
+    height: 2px;
+    background: white;
+    position: relative;
+}
+
+.step-number{
+    width: 20px;
+    height: 20px;
+    background: white;
+    color: black;
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 12px;
+    text-align: center;
+}
+
+.step1 .step-number{
+    background: #7B1FA2;
+    color: white;
+}
+
+.step4 .step-number5{
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+
+/*================================steps end======================*/
+
+
+/*==============================page1====================*/
+
+.page1{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.page1 footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.date{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date select{
+    padding: 10px;
+    width: auto;
+}

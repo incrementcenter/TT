@@ -1,13 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="reg-steps">
+    <div class="step1">
+        <div class="step-number">1</div>
+    </div>
+    <div class="step2">
+        <div class="step-number">2</div>
+    </div>
+    <div class="step3">
+        <div class="step-number">3</div>
+    </div>
+    <div class="step4">
+        <div class="step-number">4</div>
+        <div class="step-number step-number5">5</div>
+    </div>
+</div>
+
+<form action="#">
+    <div class="page-container">
+        <div class="page1">
+            <header>
+                <h3 class="purpule">BASIC INFORMATION</h3>
+                <p>We just need some basic information to begin your scoring</p>
+            </header>
+
+            <main>
+                <div>
+                    <label for="fname">What's your First Name? *</label>
+                    <div class="input-field">
+                        <input type="text" value="" id="fname" name="firstName" >
+                    </div>
+                </div>
+                <div>
+                    <label for="lname">What's your Last Name? *</label>
+                    <div class="input-field">
+                        <input type="text" value="" id="lname" name="lastName" >
+                    </div>
+                </div>
+                <div>
+                    <label>Date Of Birth</label>
+                    <div class="input-field date">
+                        <select name="month" title="month" id="month" onchange="monthchange()"></select>
+                        <select name="day" title="day" id="day"></select>
+                        <select name="year" title="year" id="year" onchange="monthchange()"></select>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button>Next</button>
+                </div>
+            </main>
+            <footer>
+                <a href="#"> What Is This?</a>
+            </footer>
+        </div>
+    </div>
+
+
+    <!--<div>-->
+    <!--<label for="email">What's your E-mail Address? *</label>-->
+    <!--<div class="input-field">-->
+    <!--<input type="email" id="email" name="email" required>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+</form>
+
+<script src="script.js"></script>
 
 </body>
 </html>
