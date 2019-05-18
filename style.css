@@ -35,7 +35,6 @@ body{
     box-shadow: 0 17px 41px -21px rgb(0, 0, 0);
     background: white;
 }
-
 .slide-itms{
     position: absolute;
     width: 1500px;
@@ -70,11 +69,6 @@ main input[type="text"], input[type="number"], input[type="email"], input[type="
     border: 1px solid #d9d9d9;
 }
 
-/*=======chi stacvum=========*/
-/*input:focus{*/
-    /*border-color: #7B1FA2;*/
-/*}*/
-
 main>*{
     margin: 30px;
 }
@@ -106,7 +100,6 @@ footer{
 .prev{
     left: 0;
 }
-
 
 /*================================steps======================*/
 .reg-steps {
