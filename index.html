@@ -9,68 +9,177 @@
 
 <div class="reg-steps">
     <div class="step1">
-        <div class="step-number">1</div>
+        <div class="bg-purpule"></div>
+        <div class="step-number">
+            <span>1</span>
+        </div>
     </div>
     <div class="step2">
-        <div class="step-number">2</div>
+        <div class="bg-purpule"></div>
+        <div class="step-number">
+            <div class="bg-purpule2"></div>
+            <span>2</span>
+        </div>
     </div>
     <div class="step3">
-        <div class="step-number">3</div>
+        <div class="bg-purpule"></div>
+        <div class="step-number">
+            <div class="bg-purpule2"></div>
+            <span>3</span>
+        </div>
     </div>
     <div class="step4">
-        <div class="step-number">4</div>
-        <div class="step-number step-number5">5</div>
+        <div class="bg-purpule"></div>
+        <div class="step-number">
+            <div class="bg-purpule2"></div>
+            <span>4</span>
+        </div>
+        <div class="step-number step-number5">
+            <div class="bg-purpule2"></div>
+            <span>5</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zm323-128.4l-27.8-28.1c-4.6-4.7-12.1-4.7-16.8-.1l-104.8 104-45.5-45.8c-4.6-4.7-12.1-4.7-16.8-.1l-28.1 27.9c-4.7 4.6-4.7 12.1-.1 16.8l81.7 82.3c4.6 4.7 12.1 4.7 16.8.1l141.3-140.2c4.6-4.7 4.7-12.2.1-16.8z"></path>
+            </svg>
+        </div>
     </div>
 </div>
 
 <form action="#">
     <div class="page-container">
-        <div class="page1">
+        <div class="page0">
             <header>
-                <h3 class="purpule">BASIC INFORMATION</h3>
+                <h3 class="purpule">Register With</h3>
                 <p>We just need some basic information to begin your scoring</p>
             </header>
 
             <main>
-                <div>
-                    <label for="fname">What's your First Name? *</label>
-                    <div class="input-field">
-                        <input type="text" value="" id="fname" name="firstName" >
-                    </div>
+                <div class="input-field facebook">
+                    <a href="#">Facebook</a>
                 </div>
-                <div>
-                    <label for="lname">What's your Last Name? *</label>
-                    <div class="input-field">
-                        <input type="text" value="" id="lname" name="lastName" >
-                    </div>
+                <div class="input-field github">
+                    <a href="#">Github</a>
                 </div>
-                <div>
-                    <label>Date Of Birth</label>
-                    <div class="input-field date">
-                        <select name="month" title="month" id="month" onchange="monthchange()"></select>
-                        <select name="day" title="day" id="day"></select>
-                        <select name="year" title="year" id="year" onchange="monthchange()"></select>
-                    </div>
+                <div class="input-field gmail">
+                    <a href="#">Google+</a>
                 </div>
                 <div class="btn">
-                    <button>Next</button>
+                    <a href="#" class="skip">Skip</a>
                 </div>
             </main>
             <footer>
                 <a href="#"> What Is This?</a>
             </footer>
         </div>
+        <div class="slide-itms">
+            <div class="page1">
+                <header>
+                    <h3 class="purpule">BASIC INFORMATION</h3>
+                    <p>We just need some basic information to begin your scoring</p>
+                </header>
+
+                <main>
+                    <div>
+                        <label for="fname">What's your First Name? *</label>
+                        <div class="input-field">
+                            <input type="text" id="fname" name="firstName" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="lname">What's your Last Name? *</label>
+                        <div class="input-field">
+                            <input type="text" id="lname" name="lastName" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Date Of Birth</label>
+                        <div class="input-field date">
+                            <select name="month" title="month" id="month" onchange="monthchange()"></select>
+                            <select name="day" title="day" id="day"></select>
+                            <select name="year" title="year" id="year" onchange="monthchange()"></select>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="next">Next</a>
+                    </div>
+                </main>
+                <footer>
+                    <a href="#"> What Is This?</a>
+                </footer>
+            </div>
+
+            <div class="page2">
+                <header>
+                    <h3 class="purpule">CONTACTS</h3>
+                    <p>We just need some basic information to begin your scoring</p>
+                </header>
+
+                <main>
+                    <div>
+                        <label for="address">What's your Registration Adress? *</label>
+                        <div class="input-field">
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phone">What's your Phone Number? *</label>
+                        <div class="input-field">
+                            <input type="text" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email">What's your E-mail Address? *</label>
+                        <div class="input-field">
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="prev">Prev</a>
+                        <a href="#" class="next">Next</a>
+                    </div>
+                </main>
+                <footer>
+                    <a href="#"> What Is This?</a>
+                </footer>
+            </div>
+
+            <div class="page3">
+                <header>
+                    <h3 class="purpule">LOGIN / PASSWORD</h3>
+                    <p>We just need some basic information to begin your scoring</p>
+                </header>
+
+                <main>
+                    <div>
+                        <label for="login">Write Your Login *</label>
+                        <div class="input-field">
+                            <input type="text" id="login" name="login" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="password">Write Your Password *</label>
+                        <div class="input-field">
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="passwordComf">Confirm Your Password *</label>
+                        <div class="input-field">
+                            <input type="password" id="passwordComf" name="passwordComf" required>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="prev">Prev</a>
+                        <input type="submit">
+                    </div>
+                </main>
+                <footer>
+                    <a href="#"> What Is This?</a>
+                </footer>
+            </div>
+        </div>
+
     </div>
-
-
-    <!--<div>-->
-    <!--<label for="email">What's your E-mail Address? *</label>-->
-    <!--<div class="input-field">-->
-    <!--<input type="email" id="email" name="email" required>-->
-    <!--</div>-->
-    <!--</div>-->
-
-
 </form>
 
 <script src="script.js"></script>

@@ -31,10 +31,18 @@ body{
     transform: translate(-50%, -50%);
     margin: 0 auto;
     overflow: hidden;
-    border-top: 7px solid #7B1FA2;
     border-radius: 2px;
     box-shadow: 0 17px 41px -21px rgb(0, 0, 0);
     background: white;
+}
+.slide-itms{
+    position: absolute;
+    width: 1500px;
+    height: 100%;
+    display: flex;
+    left: 0;
+    transition: 1s;
+    top: 520px;
 }
 
 header p{
@@ -54,17 +62,12 @@ main{
     font-size: 15px;
 }
 
-main input[type="text"], input[type="number"], input[type="email"]{
+main input[type="text"], input[type="number"], input[type="email"], input[type="password"]{
     width: 100%;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #d9d9d9;
 }
-
-/*=======chi stacvum=========*/
-/*input:focus{*/
-/*border-color: #7B1FA2;*/
-/*}*/
 
 main>*{
     margin: 30px;
@@ -72,23 +75,31 @@ main>*{
 
 footer{
     background: rgba(242,242,242,0.31);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .btn{
-    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
-button{
+.btn a, input[type=submit]{
     background: #7B1FA2;
     color: #d9d9d9;
     border: none;
     padding: 10px 30px;
-    position: absolute;
-    right: 0;
     cursor: pointer;
 }
 
+.next{
+    right: 0;
+}
 
+.prev{
+    left: 0;
+}
 
 /*================================steps======================*/
 .reg-steps {
@@ -101,7 +112,7 @@ button{
 
 .reg-steps>*{
     width: 25%;
-    height: 2px;
+    height: 3px;
     background: white;
     position: relative;
 }
@@ -116,6 +127,14 @@ button{
     transform: translateY(-50%);
     font-size: 12px;
     text-align: center;
+    transition: 1s;
+}
+
+.step-number span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .step1 .step-number{
@@ -128,22 +147,76 @@ button{
     transform: translate(-100%, -50%);
 }
 
+.bg-purpule, .bg-purpule2{
+    height: 100%;
+    width: 0;
+    background: #7B1FA2;
+    position: absolute;
+}
 
-/*================================steps end======================*/
+@keyframes bgChanging {
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+.step-number5 svg{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -40px;
+    fill: #7B1FA2;
+    display: none;
+}
+
+
+/*==================================page0=========================*/
+.page0{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    border-top: 8px solid #7B1FA2;
+    transition: 1s;
+}
+
+.page0 .input-field{
+    padding: 16px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    text-align: center;
+    font-weight: bold;
+}
+
+.page0 .input-field a{
+    color: grey;
+    font-size: 17px;
+}
+
+.page0 .btn{
+    justify-content: center;
+}
+
+.page0 .input-field:hover{
+    background: #7B1FA2;
+}
+
+.page0 .input-field:hover a{
+    color: white;
+}
 
 
 /*==============================page1====================*/
 
-.page1{
+.page1, .page2, .page3{
     width: 100%;
     height: 100%;
     position: relative;
-}
-
-.page1 footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+    background: white;
+    border-top: 8px solid #7B1FA2;
 }
 
 .date{
@@ -154,4 +227,12 @@ button{
 .date select{
     padding: 10px;
     width: auto;
+}
+
+.page1 .btn{
+    justify-content: flex-end;
+}
+
+input:focus{
+    outline: 1px solid #7B1FA2;
 }
