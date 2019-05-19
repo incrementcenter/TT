@@ -26,10 +26,6 @@ body{
     height: 520px;
     width: 500px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
     overflow: hidden;
     border-radius: 2px;
     box-shadow: 0 17px 41px -21px rgb(0, 0, 0);
@@ -70,11 +66,6 @@ main input[type="text"], input[type="number"], input[type="email"], input[type="
     border: 1px solid #d9d9d9;
 }
 
-/*=======chi stacvum=========*/
-/*input:focus{*/
-    /*border-color: #7B1FA2;*/
-/*}*/
-
 main>*{
     margin: 30px;
 }
@@ -107,6 +98,22 @@ footer{
     left: 0;
 }
 
+.input-field{
+    display: flex;
+    position: relative;
+}
+
+/*=================================Forma=======================*/
+.forma{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 600px;
+    width: 500px;
+}
+
+
 
 /*================================steps======================*/
 .reg-steps {
@@ -114,7 +121,7 @@ footer{
     margin: 0 auto;
     display: flex;
     position: relative;
-    top: 75px;
+    margin-bottom: 40px;
 }
 
 .reg-steps>*{
@@ -194,7 +201,7 @@ footer{
     padding: 16px;
     border-radius: 5px;
     border: 1px solid #d9d9d9;
-    text-align: center;
+    justify-content: center;
     font-weight: bold;
 }
 
@@ -242,4 +249,44 @@ footer{
 
 input:focus{
     outline: 1px solid #7B1FA2;
+}
+
+/*=================================Notifications==============*/
+
+.notif{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background: #837E7E;
+    padding: 8px 5px;
+    border-radius: 3px;
+    right: 0;
+    transform: translateX(150%);
+    transition: 0.2s;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 8px 5px 0;
+    border-color: transparent #837E7E transparent transparent;
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.notif svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.notif path{
+    fill: white;
+}
+
+.notif p{
+    font-size: 12px;
+    color: white;
 }
