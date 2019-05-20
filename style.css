@@ -289,3 +289,43 @@ input:focus{
     font-size: 12px;
     color: white;
 }
+
+/*=============================Info container======================*/
+
+.info-container{
+    width: 600px;
+    height: 620px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 17px 41px -21px rgb(0, 0, 0);
+}
+
+.info-container h3{
+    margin: 40px 0 70px;
+}
+
+.info-container ul{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.info-container li{
+    text-align: start;
+    margin: 20px 0;
+}
+
+.info-container p{
+    margin-top: 50px;
+}
+
+.info-container .btn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    cursor: pointer;
+}
