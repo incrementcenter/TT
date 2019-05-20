@@ -5,8 +5,8 @@ let n = 0;
 let m = 0;
 let inp = pages[0].querySelectorAll("input");
 
-function createImp() {
-   return inp=pages[n+1].querySelectorAll("input");
+function createInp() {
+    return inp = pages[n + 1].querySelectorAll("input");
 }
 
 
@@ -48,7 +48,7 @@ let stepNum = document.querySelectorAll(".step-number");
 let submit = document.querySelector("input[type=submit]");
 let notifs = document.querySelectorAll(".notif");
 
-//======================================================
+//====================skip/submit btns==================================
 skip.onclick = function () {
     let st1 = document.querySelector(".step1");
     page0.style = "transform: translateY(-100%)";
@@ -58,13 +58,18 @@ skip.onclick = function () {
     document.querySelector(".step2 .step-number").style.color = "white";
 };
 
-// ======================================================
-prev.forEach(function (btn, index) {
-    btn.onclick = toRight;
-});
+submit.onclick = function () {
+    stepColoring[stepColoring.length - 1].style.animation = "bgChanging 0.4s both";
+    stepNum[stepNum.length - 1].querySelector(".bg-purpule2").style.animation = "bgChanging 0.2s both 0.25s";
+    stepNum[stepNum.length - 1].style.color = "white";
+    setTimeout(function () {
+        document.querySelector(".step-number5 svg").style.display = "block"
+    }, 700);
+};
 
+// ======================functions======================================
 function toLeft() {
-    inp=createImp(n);
+    inp = createInp(n);
     n++;
     slide.style.transform = 'translateX(-' + (n) * parseInt(getComputedStyle(slideChilds[0]).width) + 'px)';
     stepColoring[n].style.animation = "bgChanging 0.7s both";
@@ -83,15 +88,6 @@ function toRight() {
     n--;
 }
 
-submit.onclick = function () {
-    stepColoring[stepColoring.length - 1].style.animation = "bgChanging 0.4s both";
-    stepNum[stepNum.length - 1].querySelector(".bg-purpule2").style.animation = "bgChanging 0.2s both 0.25s";
-    stepNum[stepNum.length - 1].style.color = "white";
-    setTimeout(function(){document.querySelector(".step-number5 svg").style.display = "block"} , 700);
-};
-
-// ========================================================
-
 function notifications() {
     for (let i = 0; i < inp.length; i++) {
         for (let j = 0; j < empty.length; j++) {
@@ -105,31 +101,48 @@ function notifications() {
     }
 }
 
-function checkOnclick() {
-    next.forEach(function (btn, index) {
-        if (returnInputs() !== true) {
-            btn.addEventListener('click', notifications)
-        }
-        if (returnInputs() == true) {
-            btn.addEventListener('click', toLeft)
-        }
-    });
+function checkFunction() {
+    if (returnInputs() !== true) {
+        return notifications;
+    }
+    if (returnInputs() === true) {
+        return toLeft;
+    }
 }
 
-console.log(checkOnclick());
+function nextClick() {
+    next[n].addEventListener('click', checkFunction());
+}
 
-
-inp.forEach(function (inps, index) {
+function inpchangings(){inp.forEach(function (inps, index) {
     inps.onchange = function () {
         returnInputs();
-        checkOnclick();
+        checkFunction();
+        nextClick();
+    }
+})
+}
+
+function fncsOnChange() {
+    returnInputs();
+    checkFunction();
+    nextClick();
+    inpchangings();
+}
+
+// =========================onclicks===================================
+prev.forEach(function (btn, index) {
+    btn.onclick = toRight;
+});
+
+next.forEach(function (btn, index) {
+    btn.onclick = function(){
+        fncsOnChange();
     }
 });
 
+// ==========================sevagir=====================================
 
-// ===========================================================
+// console.log(slide.getAttribute("style").onchange = fncsOnChange);
+// next[n].onclick=fncsOnChange;
 
-slide.getAttribute("style").onchange = function (){
-    returnInputs();
-    checkOnclick();
-};
