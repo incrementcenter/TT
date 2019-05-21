@@ -45,7 +45,7 @@ let skip = document.querySelector(".skip");
 let page0 = document.querySelector(".page0");
 let stepColoring = document.querySelectorAll(".bg-purpule");
 let stepNum = document.querySelectorAll(".step-number");
-let submit = document.querySelector("input[type=submit]");
+let submit = document.querySelector(".submit");
 let notifs = document.querySelectorAll(".notif");
 
 //====================skip/submit btns==================================
@@ -59,12 +59,25 @@ skip.onclick = function () {
 };
 
 submit.onclick = function () {
-    stepColoring[stepColoring.length - 1].style.animation = "bgChanging 0.4s both";
-    stepNum[stepNum.length - 1].querySelector(".bg-purpule2").style.animation = "bgChanging 0.2s both 0.25s";
-    stepNum[stepNum.length - 1].style.color = "white";
-    setTimeout(function () {
-        document.querySelector(".step-number5 svg").style.display = "block"
-    }, 700);
+
+    if (returnInputs() !== true) {
+        return notifications;
+    }
+    if (returnInputs() === true) {
+        stepColoring[stepColoring.length - 1].style.animation = "bgChanging 0.4s both";
+        stepNum[stepNum.length - 1].querySelector(".bg-purpule2").style.animation = "bgChanging 0.2s both 0.25s";
+        stepNum[stepNum.length - 1].style.color = "white";
+        setTimeout(function () {
+            document.querySelector(".step-number5 svg").style.display = "block"
+        }, 700);
+        setTimeout(function () {
+            document.querySelector(".forma").style.display="none"
+        }, 1500);
+        setTimeout(function () {
+            document.querySelector(".registered").style.animation="regAnim 1s forwards"
+        }, 1500);
+        setTimeout(type, 2500);
+    }
 };
 
 // ======================functions======================================
@@ -140,6 +153,8 @@ next.forEach(function (btn, index) {
         fncsOnChange();
     }
 });
+
+fncsOnChange();
 
 // ==========================sevagir=====================================
 
