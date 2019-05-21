@@ -1,4 +1,6 @@
 let pages = document.querySelector(".slide-itms").children;
+let inps = document.querySelectorAll("input");
+let allNotifs = document.querySelectorAll(".notif p");
 let names = [];
 let empty = [];
 let n = 0;
@@ -11,8 +13,8 @@ function createInp() {
 
 
 function namesInput() {
-    for (let i = 0; i < inp.length; i++) {
-        names.push(inp[i].name);
+    for (let i = 0; i < inps.length; i++) {
+        names.push(inps[i].name);
     }
     return names
 
@@ -46,7 +48,18 @@ let page0 = document.querySelector(".page0");
 let stepColoring = document.querySelectorAll(".bg-purpule");
 let stepNum = document.querySelectorAll(".step-number");
 let submit = document.querySelector(".submit");
-let notifs = document.querySelectorAll(".notif");
+let notifs = pages[0].querySelectorAll(".notif");
+
+function changeNotifs() {
+    return inp = pages[n + 1].querySelectorAll(".notif");
+}
+
+// ==========================creation notif inner text====================
+
+for (i=0; i<allNotifs.length; i++){
+    allNotifs[i].innerHTML=allNotifs[i].innerHTML + names[i];
+}
+
 
 //====================skip/submit btns==================================
 skip.onclick = function () {
@@ -61,7 +74,7 @@ skip.onclick = function () {
 submit.onclick = function () {
 
     if (returnInputs() !== true) {
-        return notifications;
+        return notifications();
     }
     if (returnInputs() === true) {
         stepColoring[stepColoring.length - 1].style.animation = "bgChanging 0.4s both";
@@ -82,6 +95,7 @@ submit.onclick = function () {
 
 // ======================functions======================================
 function toLeft() {
+    notifs = changeNotifs(n);
     inp = createInp(n);
     n++;
     slide.style.transform = 'translateX(-' + (n) * parseInt(getComputedStyle(slideChilds[0]).width) + 'px)';
@@ -149,9 +163,7 @@ prev.forEach(function (btn, index) {
 });
 
 next.forEach(function (btn, index) {
-    btn.onclick = function(){
-        fncsOnChange();
-    }
+    btn.onclick = fncsOnChange;
 });
 
 fncsOnChange();
